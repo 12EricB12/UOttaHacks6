@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "-": "^0.0.1",
+    "save-dev": "^0.0.1-security",
+    "solclientjs": "^10.15.0",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  }
+}
