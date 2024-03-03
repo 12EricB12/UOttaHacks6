@@ -5,7 +5,7 @@ var Publisher = function (topicName) {
     var requestor = {};
     requestor.session = null;
     requestor.topicName = topicName;
-z
+    
     // Logger
     requestor.log = function (line) {
         var now = new Date();
@@ -23,20 +23,12 @@ z
             requestor.log('Already connected and ready to send requests.');
             return;
         }
+
         var hosturl = 'wss://mr-connection-edj6keb7ium.messaging.solace.cloud:443';
-        // check for valid protocols
-        if (hosturl.lastIndexOf('ws://', 0) !== 0 && hosturl.lastIndexOf('wss://', 0) !== 0 &&
-            hosturl.lastIndexOf('http://', 0) !== 0 && hosturl.lastIndexOf('https://', 0) !== 0) {
-            session.log('Invalid protocol - please use one of ws://, wss://, http://, https://');
-            return;
-        }
         var username = 'solace-cloud-client';
         var pass = 'qscrdts02dlu6kj78a0ep7ap6j';
         var vpn = 'event-broker';
-        if (!hosturl || !username || !pass || !vpn) {
-            session.log('Cannot connect: please specify all the Solace PubSub+ Event Broker properties.');
-            return;
-        }
+
         requestor.log('Connecting to Solace PubSub+ Event Broker using url: ' + hosturl);
         requestor.log('Client username: ' + username);
         requestor.log('Solace PubSub+ Event Broker VPN name: ' + vpn);
