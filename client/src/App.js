@@ -6,6 +6,7 @@ import Multiplayer from "./pages/multiplayer/Multiplayer";
 
 function App() {
   return (
+
     <div className="App">
       <BrowserRouter>
         <Routes>
