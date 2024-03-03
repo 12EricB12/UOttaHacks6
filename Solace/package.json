@@ -1,10 +1,10 @@
 {
   "name": "solacetest",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,8 @@
     "express": "^4.18.3",
     "prompt-sync": "^4.2.0",
     "solclientjs": "^10.15.0",
-    "sync-request": "^6.1.0"
-  }
+    "sync-request": "^6.1.0",
+    "ws": "^8.16.0"
+  },
+  "description": ""
 }
