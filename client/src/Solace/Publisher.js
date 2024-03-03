@@ -5,7 +5,7 @@ var Publisher = function (topicName) {
     var requestor = {};
     requestor.session = null;
     requestor.topicName = topicName;
-z
+
     // Logger
     requestor.log = function (line) {
         var now = new Date();
@@ -93,7 +93,7 @@ z
             try {
                 requestor.session.sendRequest(
                     request,
-                    5000, // 5 seconds timeout for this operation
+                    2147483646, // 5 seconds timeout for this operation
                     function (session, message) {
                         requestor.replyReceivedCb(session, message);
                     },
@@ -116,7 +116,7 @@ z
             ' details:\n' + message.dump());
 
         const prompt = require('prompt-sync')();
-        const q = prompt('insert question');
+        const q = prompt('insert question: ');
 
         requestor.request(q);
     };

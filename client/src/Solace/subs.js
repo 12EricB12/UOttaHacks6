@@ -151,8 +151,6 @@ var Subs = function (topicName) {
     };
 
     replier.reply = function (message) {
-        question = message.getSdtContainer.getValue();
-
         replier.log('Received message: "' + message.getSdtContainer().getValue() + '", details:\n' + message.dump());
         replier.log('Replying...');
         if (replier.session !== null) {
@@ -160,7 +158,7 @@ var Subs = function (topicName) {
             var sdtContainer = message.getSdtContainer();
             
             const prompt = require('prompt-sync')();
-            const ans = String(prompt('insert question'));
+            const ans = String(prompt('what is your answer: '));
 
             if (sdtContainer.getType() === solace.SDTFieldType.STRING) {
                 var replyText = "{" + message.getSdtContainer().getValue() + ", " + ans + "} - Sample Reply";
